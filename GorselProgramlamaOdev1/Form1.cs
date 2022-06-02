@@ -30,19 +30,10 @@ namespace GorselProgramlamaOdev1
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            Search();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            Search();
-        }
-
         private void Search()
         {
-            richTextBox1.Text = richTextBox1.Text.ToString();
+            richTextBox1.Clear();
+            richTextBox1.Text = this.text;
             string text = textBox1.Text;
             if (text.Length == 0)
             {
@@ -68,6 +59,11 @@ namespace GorselProgramlamaOdev1
                 }
             }
             label1.Text = found + " adet sonuç bulundu!";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }
